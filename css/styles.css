@@ -1,8 +1,16 @@
 body{
     background-color: black;
     color: white;
+    padding-top: 50px;
+    /*padding-bottom: 70px;*/
 }
-.navbar .container-fluid .navbar-brand {
+.navbar{
+  width: 100%;
+  z-index: 100;
+  border-radius: 0;
+  border: 0;
+}
+.navbar .container .navbar-brand {
     padding: 0 0;
     margin-left: 0;
 }
@@ -10,16 +18,15 @@ body{
     max-width: 100%;
     max-height: 100%;
 }
-.carousel .item {
-    height: 400px;
-}
-
-.item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 400px;
-}
 .menu{
   background-color: #333;
+}
+footer .content{
+  padding-top: 10px;
+}
+footer .visible-xs{
+  margin-bottom: 0;
+}
+.footer-padding{
+  height: 70px;
 }
