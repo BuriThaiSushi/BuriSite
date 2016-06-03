@@ -7,6 +7,17 @@ body{
     font-size: 2em;
     position: relative;
 }
+a {
+  color: white;
+}
+a:hover{
+  color: #7daa4b;
+  text-decoration: none;
+}
+a:active{
+  color: #559e02;
+  text-decoration: none;
+}
 h4,h5,h6{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;

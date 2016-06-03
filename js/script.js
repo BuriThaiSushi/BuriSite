@@ -1,8 +1,7 @@
 $(function() {
   "use strict";
 
-  var wheight = $(window).height() - $('.description').height() - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height(); //get height of window
-
+  var wheight = $(window).height() - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of window
   $('.fullheight').css('height', wheight); //set .fullheight to window size
 
   //replace img inside carousels with a background image
@@ -15,7 +14,7 @@ $(function() {
   //adjust height of .fullheight elements on window resize
 
   $(window).resize(function(){
-    var wheight = $(window).height() - $('.description').height() - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height(); //get height of window
+    var wheight = $(window).height() - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of window
     $('.fullheight').css('height', wheight); //set .fullheight to window size
   });
 });
