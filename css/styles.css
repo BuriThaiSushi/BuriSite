@@ -7,6 +7,14 @@ body{
     font-size: 2em;
     position: relative;
 }
+@media(min-width: 992px){
+  .about{
+    padding-bottom: 86px;
+  }
+}
+/*@media(max-width: 750px){
+
+}*/
 .nav-bottom-fb > a{
   text-align: right;
 }
@@ -28,9 +36,11 @@ a:active{
 }
 .carousel-caption{
   background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-left: 15px;
+  left: 10%
 }
-h4,h5,h6{
+h5,h6{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   margin: 0;
@@ -47,12 +57,19 @@ h2{
   margin: 0;
   text-align: center;
   margin-bottom: 20px;
+  font-size: 32pt;
 }
 h3{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   margin: 0;
   padding: 0 0 10px 0;
+}
+h4{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  margin: 0;
+  font-size: 26pt;
 }
 .home{
   padding-top: 50px;
@@ -63,8 +80,12 @@ section{
 .description{
   padding-top: 15px;
 }
-address{
-  display: inline;
+.description a{
+  margin-bottom: 10px;
+}
+.address{
+  display: inline-block;
+  vertical-align: top;
 }
 ul{
   list-style-type: none;
@@ -111,9 +132,6 @@ footer .content{
 }
 footer .visible-xs{
   margin-bottom: 0;
-}
-.footer-padding{
-  height: 86px;
 }
 /**Menu**/
 .menu-cat{
