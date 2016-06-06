@@ -8,7 +8,7 @@ body{
     position: relative;
 }
 @media(min-width: 992px){
-  .about{
+  body > section:last-of-type{
     padding-bottom: 86px;
   }
 }
@@ -67,7 +67,7 @@ h4{
   padding-top: 50px;
 }
 section{
-  padding-top: 60px;
+  padding-top: 15px;
 }
 .description{
   padding-top: 15px;
@@ -115,7 +115,7 @@ header .navbar-inverse .navbar-nav .active a:hover{
   padding: 30px 0;
 }*/
 header .navbar-toggle{
-  background-color: #7daa4b;
+  background-color: #7daa4b !important;
 }
 .buri-logo{
   height: 54px;
@@ -125,21 +125,30 @@ header .navbar-toggle{
     height: 50px;
   }
 }
-/**Footer Nav**/
-footer .content{
-  padding-top: 10px;
-}
-footer .visible-xs{
-  margin-bottom: 0;
-}
-/**Menu**/
-.menu-cat{
-  font-size: 24pt;
-}
-.menu-item{
-  font-size: 18pt;
-}
 /**Carousel**/
+.fade{
+  opacity: 1;
+}
+.fade .item{
+  transition: opacity ease-out .7s;
+  left:0;
+  opacity: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+.fade .item:first-child{
+  top: auto;
+  opacity: 1;
+  position: relative;
+}
+.fade .active{
+  opacity: 1;
+}
+.carousel-control {
+  opacity: 0;
+}
 .carousel .item{
   background-size: cover;
   background-repeat: no-repeat;
@@ -152,4 +161,18 @@ footer .visible-xs{
   background-color: rgba(0, 0, 0, 0.4);
   padding-left: 15px;
   left: 10%
+}
+/**Menu**/
+.menu-cat{
+  font-size: 22pt;
+}
+.menu-item{
+  font-size: 18pt;
+}
+/**Footer Nav**/
+footer .content{
+  padding-top: 10px;
+}
+footer .visible-xs{
+  margin-bottom: 0;
 }
