@@ -6,14 +6,14 @@ $(function() {
   var wcarousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 15; //get height of carousel
   $('.fullheight').css('height', wcarousel); //set .fullheight to window size
 
-
-  $('.carousel-caption p').each(function(){
     if(wwidth < 768){
-      $(this).hide();
+      $('.carousel-caption p').hide();
     } else {
-      $(this).show();
+      $('.carousel-caption p').show();
     }
-  });
+
+
+
 
   // $('#map').each(function(){
   //   if(wwidth < 768){

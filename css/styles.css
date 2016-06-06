@@ -12,18 +12,15 @@ body{
     padding-bottom: 86px;
   }
 }
-/*@media(max-width: 750px){
-
-}*/
 .nav-bottom-fb > a{
   text-align: right;
 }
-a:visited{
-  color: #d2d2d2;
-  text-decoration: none;
-}
 a:link{
   color: white;
+  text-decoration: none;
+}
+a:visited{
+  color: #d2d2d2;
   text-decoration: none;
 }
 a:hover{
@@ -34,12 +31,7 @@ a:active{
   color: #559e02;
   text-decoration: none;
 }
-.carousel-caption{
-  background-color: #000000;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding-left: 15px;
-  left: 10%
-}
+
 h5,h6{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -97,13 +89,9 @@ ul{
   border-radius: 0;
   border: 0;
 }
-.navbar .container .navbar-brand {
-    padding: 0 0;
-    margin-left: 0;
-}
-.buri-logo{
-    max-width: 100%;
-    max-height: 100%;
+.navbar .container .navbar-brand{
+  padding: 0 0;
+  margin-left: 0;
 }
 header .navbar-inverse .navbar-nav a{
   color: white;
@@ -126,6 +114,17 @@ header .navbar-inverse .navbar-nav .active a:hover{
 /*header .navbar{
   padding: 30px 0;
 }*/
+header .navbar-toggle{
+  background-color: #7daa4b;
+}
+.buri-logo{
+  height: 54px;
+}
+@media(max-width: 768px){
+  .buri-logo{
+    height: 50px;
+  }
+}
 /**Footer Nav**/
 footer .content{
   padding-top: 10px;
@@ -147,4 +146,10 @@ footer .visible-xs{
   background-position: center center;
   width: 100%;
   height: 100%;
+}
+.carousel-caption{
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-left: 15px;
+  left: 10%
 }
