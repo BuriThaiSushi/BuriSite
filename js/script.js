@@ -1,6 +1,11 @@
 $(function() {
   "use strict";
 
+  //disable carousel pause
+  $('.carousel').carousel({
+    pause: false
+  });
+
   var wheight = $(window).height(); //get height of window
   var wwidth = $(window).width(); //get width of window
 
@@ -19,6 +24,28 @@ $(function() {
   } else {
     $('header nav').removeClass('inbody');
   }
+  //Highlight home as active if in description
+  if(hash === '#description'){
+    $('li a[href="#page-top"]').parent().addClass('active');
+  }
+
+  //Append "current" text for screen reader in navbar
+  $(this).find('li.active a').append("<span class=\"sr-only\">\(current\)</span>");
+
+  // Add an inbody class & append "current" text for screen readers to nav when scrollspy event fires
+  $('.navbar-fixed-top').on('activate.bs.scrollspy', function() {
+    var hash = $(this).find('li.active a').attr('href');
+    if(hash !== '#page-top') {
+      $('header nav').addClass('inbody');
+    } else {
+      $('header nav').removeClass('inbody');
+    }
+    if(hash === '#description'){
+      $('li a[href="#page-top"]').parent().addClass('active');
+    }
+    $('li a').find('span.sr-only').remove();
+    $(this).find('li.active a').append("<span class=\"sr-only\">\(current\)</span>");
+  });
 
   //show carousel caption only on sizes bigger than xs
   //fix navbar on bottom only for sizes bigger than xs
@@ -27,10 +54,12 @@ $(function() {
   } else {
     $('.carousel-caption p').show();
     $('footer nav').addClass('navbar-fixed-bottom');
+    $('footer nav .content').removeClass('container-fluid');
+    $('footer nav .content').addClass('container');
     $('.fixed-address').addClass('text-right');
   }
 
-  var carousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+  var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
   $('.fullheight').css('height', carousel); //set .fullheight to window size
 
   //Use smooth scrolling when clicking on navigation
@@ -62,16 +91,20 @@ $(function() {
     if(wwidth < 768){
       //hide carousel caption, put footer at bottom of page
       $('.carousel-caption p').hide();
+      $('footer nav .content').removeClass('container');
       $('footer nav').removeClass('navbar-fixed-bottom');
+      $('footer nav .content').addClass('container-fluid');
       $('.fixed-address').removeClass('text-right');
     } else {
       //show carousel caption, put footer at bottom of window
       $('.carousel-caption p').show();
+      $('footer nav .content').removeClass('container-fluid');
       $('footer nav').addClass('navbar-fixed-bottom');
+      $('footer nav .content').addClass('container');
       $('.fixed-address').addClass('text-right');
     }
     var wheight = $(window).height(); //get height of window
-    var carousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+    var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
     $('.fullheight').css('height', carousel); //set .fullheight to window size
   });
 });
