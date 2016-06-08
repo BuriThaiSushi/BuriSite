@@ -3,8 +3,6 @@ $(function() {
 
   var wheight = $(window).height(); //get height of window
   var wwidth = $(window).width(); //get width of window
-  var wcarousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 15; //get height of carousel
-  $('.fullheight').css('height', wcarousel); //set .fullheight to window size
 
   var topoffset = 50; //variable for menu height
 
@@ -23,13 +21,17 @@ $(function() {
   }
 
   //show carousel caption only on sizes bigger than xs
+  //fix navbar on bottom only for sizes bigger than xs
   if(wwidth < 768){
     $('.carousel-caption p').hide();
   } else {
     $('.carousel-caption p').show();
+    $('footer nav').addClass('navbar-fixed-bottom');
+    $('.fixed-address').addClass('text-right');
   }
 
-
+  var carousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+  $('.fullheight').css('height', carousel); //set .fullheight to window size
 
   //Use smooth scrolling when clicking on navigation
   $('.navbar a[href*=#]:not([href=#])').click(function() {
@@ -56,14 +58,20 @@ $(function() {
 
   //adjust height of .fullheight elements on window resize
   $(window).resize(function(){
-    var wheight = $(window).height(); //get height of window
-    var wcarousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 15; //get height of carousel
-    $('.fullheight').css('height', wcarousel); //set .fullheight to window size
     var wwidth = $(window).width();
     if(wwidth < 768){
+      //hide carousel caption, put footer at bottom of page
       $('.carousel-caption p').hide();
+      $('footer nav').removeClass('navbar-fixed-bottom');
+      $('.fixed-address').removeClass('text-right');
     } else {
+      //show carousel caption, put footer at bottom of window
       $('.carousel-caption p').show();
+      $('footer nav').addClass('navbar-fixed-bottom');
+      $('.fixed-address').addClass('text-right');
     }
+    var wheight = $(window).height(); //get height of window
+    var carousel = wheight - $('.navbar-fixed-top').height() - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+    $('.fullheight').css('height', carousel); //set .fullheight to window size
   });
 });

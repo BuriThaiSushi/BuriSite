@@ -7,7 +7,7 @@ body{
     font-size: 2em;
     position: relative;
 }
-@media(min-width: 992px){
+@media(min-width: 768px){
   body > section:last-of-type{
     padding-bottom: 86px;
   }
@@ -69,19 +69,6 @@ h4{
 section{
   padding-top: 15px;
 }
-.description{
-  padding-top: 15px;
-}
-.description a{
-  margin-bottom: 10px;
-}
-.address{
-  display: inline-block;
-  vertical-align: top;
-}
-ul{
-  list-style-type: none;
-}
 /**Header Nav**/
 .navbar{
   width: 100%;
@@ -101,7 +88,7 @@ header .navbar-inverse .navbar-nav a:hover{
   color: #7daa4b;
   /*text-decoration: underline;*/
 }
-header .navbar-inverse .navbar-nav .active a{
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
   color: #559e02;
   border-bottom: 4px solid;
   background-color: transparent;
@@ -115,7 +102,10 @@ header .navbar-inverse .navbar-nav .active a:hover{
   padding: 30px 0;
 }*/
 header .navbar-toggle{
-  background-color: #7daa4b !important;
+  background-color: #7daa4b;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+  background-color: #7daa4b;
 }
 .buri-logo{
   height: 54px;
@@ -162,12 +152,22 @@ header .navbar-toggle{
   padding-left: 15px;
   left: 10%
 }
+/**Description**/
+.description{
+  padding-top: 15px;
+}
+.description a{
+  margin-bottom: 10px;
+}
 /**Menu**/
 .menu-cat{
   font-size: 22pt;
 }
 .menu-item{
   font-size: 18pt;
+}
+ul{
+  list-style-type: none;
 }
 /**Footer Nav**/
 footer .content{
