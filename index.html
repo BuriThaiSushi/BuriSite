@@ -13,7 +13,7 @@
     <title>Buri Thai &amp; Sushi Restaurant|Indialantic, Florida</title>
 </head>
 <body id="page-top">
-  <!-- TODO: add photo spots to menu and about section (maybe), make menu collapse if user clicks elsewhere on screen on mobile -->
+  <!-- TODO: add photo spots to menu and about section (maybe), make menu collapse if user taps on link or elsewhere on screen on mobile-->
   <header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -36,7 +36,7 @@
                     <li aria-hidden="true" style="display: none;"><a href="#description"></a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a class="fa fa-facebook-square fa-lg hidden-xs" href="https://www.facebook.com/burithaisushi/" target="_blank"></a></li>
+                    <li><a class="fa fa-facebook-square fa-lg hidden-xs" href="https://www.facebook.com/burithaisushi/" target="_blank"></a><span class="sr-only">Facebook</span></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container -->
@@ -57,28 +57,28 @@
                 <img src="photos/pic1.JPG" alt="Chef cooking">
                 <div class="carousel-caption">
                     <h4 class="text-left">Delicious Thai Food</h4>
-                    <p class="text-left">&emsp;Experience the delight of exotic Thai dishes</p>
+                    <p class="text-left hidden-xs">&emsp;Experience the delight of exotic Thai dishes</p>
                 </div>
             </div>
             <div class="item">
                 <img src="photos/pic2.JPG" alt="Sushi boat">
                 <div class="carousel-caption">
                     <h4 class="text-left">Fresh Sushi</h4>
-                    <p class="text-left">&emsp;Enjoy fresh, masterfully crafted sushi</p>
+                    <p class="text-left hidden-xs">&emsp;Enjoy fresh, masterfully crafted sushi</p>
                 </div>
             </div>
             <div class="item">
                 <img src="photos/pic3.JPG" alt="Coffee cup">
                 <div class="carousel-caption">
                     <h4 class="text-left">Gourmet Coffee</h4>
-                    <p class="text-left">&emsp;Stop in for a cup of coffee, brewed to your tastes</p>
+                    <p class="text-left hidden-xs">&emsp;Stop in for a cup of coffee, brewed to your tastes</p>
                 </div>
             </div>
             <div class="item">
                 <img src="photos/pic4.jpg" alt="Dessert display">
                 <div class="carousel-caption">
                     <h4 class="text-left">Delectable Desserts</h4>
-                    <p class="text-left">&emsp;Taste sweet, beautiful desserts</p>
+                    <p class="text-left hidden-xs">&emsp;Taste sweet, beautiful desserts</p>
                 </div>
             </div>
         </div>
@@ -98,12 +98,12 @@
       <div class="row">
         <div class="col-sm-6">
           <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> (321) 312-6577</p>
-          <p class="visible-xs"><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address"> 1220 Highway A1a N, Ste 101<br>Indialantic, FL 32903</span></p>
+          <a href="https://www.google.com/maps/place/Buri+Thai+%26+Sushi/@28.1029862,-80.5736753,17z/data=!4m5!3m4!1s0x88de1119ffceddf7:0x64d117b4446f0fc1!8m2!3d28.1029862!4d-80.571492?hl=en-US" class="visible-xs" target="_blank"><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address"> 1220 Highway A1a N, Ste 101<br>Indialantic, FL 32903</span></a>
           <a href="https://www.facebook.com/burithaisushi/" target="_blank"><i class="fa fa-facebook-square fa-lg"></i> Check us out on Facebook!</a>
         </div>
         <div class="col-sm-6 hidden-xs text-right" id="map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.4270667432306!2d-80.57265364923438!3d28.103014082544437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88de1119e1c2ddeb%3A0xd3c5ac47ed3db28c!2s1220+N+Hwy+A1A+%23101%2C+Indialantic%2C+FL+32903!5e0!3m2!1sen!2sus!4v1465017846724" width="200" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
-          <p><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address">1220 Highway A1a N, Ste 101<br>Indialantic, FL 32903</span></p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.4279819231606!2d-80.57367532042466!3d28.102986182714837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88de1119ffceddf7%3A0x64d117b4446f0fc1!2sBuri+Thai+%26+Sushi!5e0!3m2!1sen!2sus!4v1465420264598" width="200" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <a href="https://www.google.com/maps/place/Buri+Thai+%26+Sushi/@28.1029862,-80.5736753,17z/data=!4m5!3m4!1s0x88de1119ffceddf7:0x64d117b4446f0fc1!8m2!3d28.1029862!4d-80.571492?hl=en-US" style="display: block;" target="_blank"><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address">1220 Highway A1a N, Ste 101<br>Indialantic, FL 32903</span></a>
         </div>
       </div>
     </div>
@@ -276,11 +276,11 @@
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="content container-fluid">
         <div class="row">
-          <div class="col-sm-4">
-            <p class="fixed-phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><span class="phone"> (321) 312-6577</span></p>
+          <div class="col-sm-4 fixed-phone">
+            <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><span class="phone"> (321) 312-6577</span></p>
           </div>
-          <div class="col-sm-8">
-            <p class="fixed-address"><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address">1220 Highway A1a N, Ste 101, Indialantic, FL</span></p>
+          <div class="col-sm-8 fixed-address">
+            <a href="https://www.google.com/maps/place/Buri+Thai+%26+Sushi/@28.1029862,-80.5736753,17z/data=!4m5!3m4!1s0x88de1119ffceddf7:0x64d117b4446f0fc1!8m2!3d28.1029862!4d-80.571492?hl=en-US" target="_blank"><i class="fa fa-map-o" aria-hidden="true"></i> <span class="address">1220 Highway A1a N, Ste 101, Indialantic, FL 32903</span></a>
           </div>
           <div class="col-sm-12 visible-xs">
             <p><a href="https://www.facebook.com/burithaisushi/" target="_blank"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></p>

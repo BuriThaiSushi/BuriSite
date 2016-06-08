@@ -49,17 +49,14 @@ $(function() {
 
   //show carousel caption only on sizes bigger than xs
   //fix navbar on bottom only for sizes bigger than xs
-  if(wwidth < 768){
-    $('.carousel-caption p').hide();
-  } else {
-    $('.carousel-caption p').show();
+  if(wwidth > 768){
     $('footer nav').addClass('navbar-fixed-bottom');
     $('footer nav .content').removeClass('container-fluid');
     $('footer nav .content').addClass('container');
     $('.fixed-address').addClass('text-right');
   }
 
-  var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+  var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
   $('.fullheight').css('height', carousel); //set .fullheight to window size
 
   //Use smooth scrolling when clicking on navigation
@@ -85,26 +82,31 @@ $(function() {
     $(this).remove();
   });
 
+  // //close nav menu on mobile after tapping a link
+  // $(document).on('click','.navbar-collapse.in', function(e) {
+  //   if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+  //       $(this).collapse('hide');
+  //   }
+  // });
+
   //adjust height of .fullheight elements on window resize
   $(window).resize(function(){
     var wwidth = $(window).width();
     if(wwidth < 768){
-      //hide carousel caption, put footer at bottom of page
-      $('.carousel-caption p').hide();
+      //put footer at bottom of page, change type of container
       $('footer nav .content').removeClass('container');
       $('footer nav').removeClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container-fluid');
       $('.fixed-address').removeClass('text-right');
     } else {
-      //show carousel caption, put footer at bottom of window
-      $('.carousel-caption p').show();
+      //put footer at bottom of window, change type of container
       $('footer nav .content').removeClass('container-fluid');
       $('footer nav').addClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container');
       $('.fixed-address').addClass('text-right');
     }
     var wheight = $(window).height(); //get height of window
-    var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight(); //get height of carousel
+    var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
     $('.fullheight').css('height', carousel); //set .fullheight to window size
   });
 });
