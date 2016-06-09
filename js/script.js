@@ -59,13 +59,16 @@ $(function() {
   var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
   $('.fullheight').css('height', carousel); //set .fullheight to window size
 
-  //Use smooth scrolling when clicking on navigation
+  //Use smooth scrolling when clicking on navigation and close menu on click on mobile
   $('.navbar a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') ===
       this.pathname.replace(/^\//,'') &&
       location.hostname === this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if($(this).attr('class') !== 'dropdown-toggle') {
+          $(this).parents('.navbar-collapse.in').collapse('hide');
+      }
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top-topoffset+2
@@ -81,13 +84,6 @@ $(function() {
     $(this).parent().css({'background-image': 'url('+imgSrc+')'});
     $(this).remove();
   });
-
-  // //close nav menu on mobile after tapping a link
-  // $(document).on('click','.navbar-collapse.in', function(e) {
-  //   if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
-  //       $(this).collapse('hide');
-  //   }
-  // });
 
   //adjust height of .fullheight elements on window resize
   $(window).resize(function(){
