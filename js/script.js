@@ -78,6 +78,16 @@ $(function() {
     } //click function
   }); //smooth scrolling
 
+  //Highlight group pricing for menu categories with general pricing
+  $('.no-price').hover(
+    function(){
+      console.log($(this).parents('.row.menu-cat').children('.cat-pricing'));
+      $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').addClass('menu-group-hover');
+    }, function(){
+      $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').removeClass('menu-group-hover');
+    }
+  );
+
   //replace img inside carousels with a background image
   $('#carousel-display .item img').each(function(){
     var imgSrc = $(this).attr('src');

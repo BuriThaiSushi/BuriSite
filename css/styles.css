@@ -1,7 +1,6 @@
 body{
     background-color: black;
     color: white;
-    /*padding-top: 50px;*/
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
     font-size: 2em;
@@ -166,11 +165,39 @@ header .inbody{
   margin-bottom: 10px;
 }
 /**Menu**/
-.menu-cat{
+.menu-cat-heading{
   font-size: 22pt;
 }
 .menu-item{
   font-size: 18pt;
+}
+.menu-description{
+  margin: 0;
+}
+.menu-price{
+  margin: 0 0 10px;
+}
+.menu-group{
+  padding-bottom: 10px;
+}
+.menu-group:hover{
+  color: #f8ff00;
+}
+.menu-group-hover{
+  color: #f8ff00;
+}
+.menu-cat-subheading{
+  padding-bottom: 10px;
+}
+.menu-subcat-heading{
+  font-size: 16pt;
+}
+.has-sublist{
+  margin-bottom: 0;
+}
+.has-proceeding-list{
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 ul{
   list-style-type: none;
