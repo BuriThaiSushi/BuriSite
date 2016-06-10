@@ -81,7 +81,6 @@ $(function() {
   //Highlight group pricing for menu categories with general pricing
   $('.no-price').hover(
     function(){
-      console.log($(this).parents('.row.menu-cat').children('.cat-pricing'));
       $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').addClass('menu-group-hover');
     }, function(){
       $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').removeClass('menu-group-hover');
