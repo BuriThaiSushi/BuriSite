@@ -47,6 +47,15 @@ $(function() {
     $(this).find('li.active a').append("<span class=\"sr-only\">\(current\)</span>");
   });
 
+  //Make all elements highlight on iOS when touched
+  $('.menu-group').hover(
+    function(){
+      $(this).addClass('menu-group-hover');
+    }, function(){
+      $(this).removeClass('menu-group-hover');
+    }
+  );
+
   //show carousel caption only on sizes bigger than xs
   //fix navbar on bottom only for sizes bigger than xs
   if(wwidth > 768){
