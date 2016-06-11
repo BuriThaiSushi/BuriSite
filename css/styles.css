@@ -183,14 +183,20 @@ header .inbody{
 .menu-group-hover{
   color: #f8ff00;
 }
+.menu-cat{
+  padding-bottom: 15px;
+}
 .menu-cat-subheading{
   padding-bottom: 10px;
 }
 .menu-subcat-heading{
   font-size: 16pt;
 }
+.menu-subcat-subheading{
+  padding-bottom: 10px;
+}
 .has-sublist{
-  margin-bottom: 0;
+  /*margin-bottom: 0;*/
 }
 .has-proceeding-list{
   margin-bottom: 0;

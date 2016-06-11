@@ -48,13 +48,14 @@ $(function() {
   });
 
   //Make all elements highlight on iOS when touched
-  $('.menu-group').hover(
-    function(){
-      $(this).addClass('menu-group-hover');
-    }, function(){
-      $(this).removeClass('menu-group-hover');
-    }
-  );
+  $('.menu-group').each(function(){
+    $(this).hover(function(){
+        $(this).addClass('menu-group-hover');
+      }, function(){
+        $(this).removeClass('menu-group-hover');
+      }
+    );
+  });
 
   //show carousel caption only on sizes bigger than xs
   //fix navbar on bottom only for sizes bigger than xs
@@ -66,9 +67,9 @@ $(function() {
     //Highlight group pricing for menu categories with general pricing
     $('.no-price').hover(
       function(){
-        $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').addClass('menu-group-hover');
+        $(this).parents('.row.menu-cat').children('.cat-pricing').addClass('menu-group-hover');
       }, function(){
-        $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').removeClass('menu-group-hover');
+        $(this).parents('.row.menu-cat').children('.cat-pricing').removeClass('menu-group-hover');
       }
     );
   }
