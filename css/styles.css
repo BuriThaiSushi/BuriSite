@@ -6,11 +6,11 @@ body{
     font-size: 2em;
     position: relative;
 }
-@media(min-width: 768px){
+/*@media(min-width: 768px){
   body > section:last-of-type{
     padding-bottom: 86px;
   }
-}
+}*/
 .nav-bottom-fb > a{
   text-align: right;
 }
@@ -48,7 +48,7 @@ h2{
   margin: 0;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 32pt;
+  font-size: 34pt;
 }
 h3{
   font-family: 'Raleway', sans-serif;
@@ -166,7 +166,7 @@ header .inbody{
 }
 /**Menu**/
 .menu-cat-heading{
-  font-size: 22pt;
+  font-size: 24pt;
 }
 .menu-item{
   font-size: 18pt;
@@ -190,13 +190,14 @@ header .inbody{
   padding-bottom: 10px;
 }
 .menu-subcat-heading{
-  font-size: 16pt;
+  font-size: 24pt;
+  margin-bottom: 10px;
 }
 .menu-subcat-subheading{
   padding-bottom: 10px;
 }
-.has-sublist{
-  /*margin-bottom: 0;*/
+.menu-proceeding-subhead{
+  padding-top: 10px;
 }
 .has-proceeding-list{
   margin-bottom: 0;
@@ -214,4 +215,9 @@ footer .navbar{
 }
 .fixed-address{
   margin-bottom: 10px;
+}
+.copyright{
+  padding-bottom: 60px;
+  font-size: 10pt;
+  color: #888888;
 }

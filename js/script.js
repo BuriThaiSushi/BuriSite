@@ -1,6 +1,9 @@
 $(function() {
   "use strict";
 
+  //enable tooltips
+  $('[data-toggle="tooltip"]').tooltip();
+
   //disable carousel pause
   $('.carousel').carousel({
     pause: false
@@ -64,15 +67,16 @@ $(function() {
     $('footer nav .content').removeClass('container-fluid');
     $('footer nav .content').addClass('container');
     $('.fixed-address').addClass('text-right');
-    //Highlight group pricing for menu categories with general pricing
-    $('.no-price').hover(
-      function(){
-        $(this).parents('.row.menu-cat').children('.cat-pricing').addClass('menu-group-hover');
-      }, function(){
-        $(this).parents('.row.menu-cat').children('.cat-pricing').removeClass('menu-group-hover');
-      }
-    );
   }
+
+  //Highlight group pricing for menu categories with general pricing
+  $('.no-price').hover(
+    function(){
+      $(this).parents('.row.menu-cat').children('.cat-pricing').addClass('menu-group-hover');
+    }, function(){
+      $(this).parents('.row.menu-cat').children('.cat-pricing').removeClass('menu-group-hover');
+    }
+  );
 
   var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
   $('.fullheight').css('height', carousel); //set .fullheight to window size
@@ -112,9 +116,6 @@ $(function() {
       $('footer nav').removeClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container-fluid');
       $('.fixed-address').removeClass('text-right');
-      $('.no-price').hover(
-        function(){}, function(){}
-      );
     } else {
       //put footer at bottom of window, change type of container
       $('footer nav .content').removeClass('container-fluid');
@@ -122,13 +123,6 @@ $(function() {
       $('footer nav .content').addClass('container');
       $('.fixed-address').addClass('text-right');
       //Highlight group pricing for menu categories with general pricing
-      $('.no-price').hover(
-        function(){
-          $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').addClass('menu-group-hover');
-        }, function(){
-          $(this).parents('.row.menu-cat').children('.menu-left').children('.cat-pricing').removeClass('menu-group-hover');
-        }
-      );
     }
     var wheight = $(window).height(); //get height of window
     var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
