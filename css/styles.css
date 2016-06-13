@@ -165,6 +165,15 @@ header .inbody{
   margin-bottom: 10px;
 }
 /**Menu**/
+.nav-tabs{
+  margin-bottom: 15px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus{
+  color: #559e02;
+}
+.nav-tabs>li.active>a:hover{
+  color:#7daa4b;
+}
 .menu-cat-heading{
   font-size: 24pt;
 }

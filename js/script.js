@@ -50,7 +50,7 @@ $(function() {
     $(this).find('li.active a').append("<span class=\"sr-only\">\(current\)</span>");
   });
 
-  //Make all elements highlight on iOS when touched
+  //Make all elements highlight on hover and on iOS when touched
   $('.menu-group').each(function(){
     $(this).hover(function(){
         $(this).addClass('menu-group-hover');
