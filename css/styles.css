@@ -11,9 +11,7 @@ body{
     padding-bottom: 86px;
   }
 }*/
-.nav-bottom-fb > a{
-  text-align: right;
-}
+
 a:link{
   color: white;
   text-decoration: none;
@@ -101,7 +99,7 @@ header .navbar{
   /*padding: 30px 0;*/
   transition: background-color ease-out .3s;
   background-color: #222222;
-  background-color: rgba(34, 34, 34, 0.75);
+  background-color: rgba(34, 34, 34, .75);
 }
 header .navbar-toggle{
   background-color: #7daa4b;
@@ -162,6 +160,9 @@ header .inbody{
   padding-top: 15px;
 }
 .description a{
+  margin-bottom: 10px;
+}
+.hours-toggle{
   margin-bottom: 10px;
 }
 /**Menu**/
@@ -229,4 +230,9 @@ footer .navbar{
   padding-bottom: 60px;
   font-size: 10pt;
   color: #888888;
+}
+@media(max-width: 768px){
+  .copyright{
+    padding-bottom: 10px;
+  }
 }

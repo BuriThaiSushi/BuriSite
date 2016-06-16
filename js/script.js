@@ -9,7 +9,6 @@ $(function() {
     pause: false
   });
 
-  var wheight = $(window).height(); //get height of window
   var wwidth = $(window).width(); //get width of window
 
   var topoffset = 50; //variable for menu height
@@ -67,6 +66,8 @@ $(function() {
     $('footer nav .content').removeClass('container-fluid');
     $('footer nav .content').addClass('container');
     $('.fixed-address').addClass('text-right');
+    $('#hours-collapse').addClass('in');
+    $('.hours-toggle').attr('aria-expanded', true);
   }
 
   //Highlight group pricing for menu categories with general pricing
@@ -78,8 +79,12 @@ $(function() {
     }
   );
 
-  var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
-  $('.fullheight').css('height', carousel); //set .fullheight to window size
+  //close nav on mobile if tapped elsewhere
+  $(document).on('click', function(event) {
+    if (!$(event.target).closest('#menucontainer').length) {
+      $('.navbar-collapse.in').collapse('hide');
+    }
+  });
 
   //Use smooth scrolling when clicking on navigation and close menu on click on mobile
   $('.navbar a[href*=#]:not([href=#])').click(function() {
@@ -107,6 +112,71 @@ $(function() {
     $(this).remove();
   });
 
+  var wheight = 0;
+  var carousel = 0;
+
+  wheight = $(window).height(); //get height of window
+  console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
+  carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
+  console.log(carousel);
+  $('.fullheight').css('height', carousel); //set .fullheight to window size
+  //create margin above header if not enough space to keep it below navbar
+  if(carousel < $('.navbar-fixed-top .navbar-header').height()){
+    var absCarousel = 0;
+    if(carousel >= 0){
+      absCarousel = carousel;
+    }
+    var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
+    if(headerMargin < 50){
+      $('.description').css('margin-top', headerMargin + 'px');
+    } else{
+      $('.description').css('margin-top', 50);
+    }
+  } else {
+    $('.description').css('margin-top', 0);
+  }
+  //do not show captions until loaded
+  $('.carousel-caption').hide();
+
+  $(window).bind("load", function() {
+    //make any corrections after page is completely loaded
+    wheight = $(window).height(); //get height of window
+    console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
+    carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
+    console.log(carousel);
+    $('.fullheight').css('height', carousel); //set .fullheight to window size
+    //create margin above header if not enough space to keep it below navbar
+    if(carousel < $('.navbar-fixed-top .navbar-header').height()){
+      var absCarousel = 0;
+      if(carousel >= 0){
+        absCarousel = carousel;
+      }
+      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
+      if(headerMargin < 50){
+        $('.description').css('margin-top', headerMargin + 'px');
+      } else{
+        $('.description').css('margin-top', 50);
+      }
+    } else {
+      $('.description').css('margin-top', 0);
+    }
+    //if carousel captions does not fit below navbar, do not show it
+    var tallestCap = 0;
+    $('.carousel-caption').each(function(){
+      if($(this).height() > tallestCap){
+        tallestCap = $(this).outerHeight();
+      }
+    });
+    if((tallestCap + 20 + $('.navbar-fixed-top .navbar-header').height()) > $('.fullheight').css('height').replace(/[^-\d\.]/g, '')){
+      $('.carousel-caption').hide();
+    } else {
+      $('.carousel-caption').show();
+    }
+  });
+
+  console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
+  console.log(carousel);
+
   //adjust height of .fullheight elements on window resize
   $(window).resize(function(){
     var wwidth = $(window).width();
@@ -122,10 +192,61 @@ $(function() {
       $('footer nav').addClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container');
       $('.fixed-address').addClass('text-right');
-      //Highlight group pricing for menu categories with general pricing
     }
     var wheight = $(window).height(); //get height of window
+    console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
     var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
+    console.log(carousel);
+    $('.fullheight').css('height', carousel); //set .fullheight to window size minus other elements
+
+    //if carousel captions does not fit below navbar, do not show it
+    var tallestCap = 0;
+    $('.carousel-caption').each(function(){
+      if($(this).height() > tallestCap){
+        tallestCap = $(this).outerHeight();
+      }
+    });
+    if((tallestCap + 20 + $('.navbar-fixed-top .navbar-header').height()) > $('.fullheight').css('height').replace(/[^-\d\.]/g, '')){
+      $('.carousel-caption').hide();
+    } else {
+      $('.carousel-caption').show();
+    }
+
+    //create margin above header if not enough space to keep it below navbar
+    if(carousel < $('.navbar-fixed-top .navbar-header').height()){
+      var absCarousel = 0;
+      if(carousel >= 0){
+        absCarousel = carousel;
+      }
+      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
+      if(headerMargin < 50){
+        $('.description').css('margin-top', headerMargin + 'px');
+      } else{
+        $('.description').css('margin-top', '50px');
+      }
+    } else {
+      $('.description').css('margin-top', 0);
+    }
+  });
+  $(document).on('hidden.bs.collapse', function(){
+    var wheight = $(window).height(); //get height of window
+    var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
+    console.log(carousel);
     $('.fullheight').css('height', carousel); //set .fullheight to window size
+    //create margin above header if not enough space to keep it below navbar
+    if(carousel < $('.navbar-fixed-top .navbar-header').height()){
+      var absCarousel = 0;
+      if(carousel >= 0){
+        absCarousel = carousel;
+      }
+      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
+      if(headerMargin < 50){
+        $('.description').css('margin-top', headerMargin + 'px');
+      } else{
+        $('.description').css('margin-top', '50px');
+      }
+    } else {
+      $('.description').css('margin-top', 0);
+    }
   });
 });
