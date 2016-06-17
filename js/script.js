@@ -166,7 +166,6 @@ $(function() {
       $('footer nav').removeClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container-fluid');
       $('.fixed-address').removeClass('text-right');
-      $('#hours-collapse').collapse('hide');
     } else {
       //put footer at bottom of window, change type of container, expand hours
       $('footer nav .content').removeClass('container-fluid');
