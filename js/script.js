@@ -61,7 +61,7 @@ $(function() {
 
   //show carousel caption only on sizes bigger than xs
   //fix navbar on bottom only for sizes bigger than xs
-  if(wwidth > 768){
+  if(wwidth >= 768){
     $('footer nav').addClass('navbar-fixed-bottom');
     $('footer nav .content').removeClass('container-fluid');
     $('footer nav .content').addClass('container');
@@ -122,17 +122,14 @@ $(function() {
   $('.fullheight').css('height', carousel); //set .fullheight to window size
   //create margin above header if not enough space to keep it below navbar
   if(carousel < $('.navbar-fixed-top .navbar-header').height()){
-    var absCarousel = 0;
-    if(carousel >= 0){
-      absCarousel = carousel;
-    }
-    var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
-    if(headerMargin < 50){
-      $('.description').css('margin-top', headerMargin + 'px');
-    } else{
-      $('.description').css('margin-top', 50);
-    }
+    $('.fullheight').hide();
+    // if(headerMargin < 50){
+      $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
+    // } else{
+    //   $('.description').css('margin-top', 50);
+    // }
   } else {
+    $('.fullheight').show();
     $('.description').css('margin-top', 0);
   }
   //do not show captions until loaded
@@ -147,17 +144,14 @@ $(function() {
     $('.fullheight').css('height', carousel); //set .fullheight to window size
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
-      var absCarousel = 0;
-      if(carousel >= 0){
-        absCarousel = carousel;
-      }
-      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
-      if(headerMargin < 50){
-        $('.description').css('margin-top', headerMargin + 'px');
-      } else{
-        $('.description').css('margin-top', 50);
-      }
+      $('.fullheight').hide();
+      // if(headerMargin < 50){
+        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
+      // } else{
+      //   $('.description').css('margin-top', 50);
+      // }
     } else {
+      $('.fullheight').show();
       $('.description').css('margin-top', 0);
     }
     //if carousel captions does not fit below navbar, do not show it
@@ -214,17 +208,14 @@ $(function() {
 
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
-      var absCarousel = 0;
-      if(carousel >= 0){
-        absCarousel = carousel;
-      }
-      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
-      if(headerMargin < 50){
-        $('.description').css('margin-top', headerMargin + 'px');
-      } else{
-        $('.description').css('margin-top', '50px');
-      }
+      $('.fullheight').hide();
+      // if(headerMargin < 50){
+        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
+      // } else{
+      //   $('.description').css('margin-top', 50);
+      // }
     } else {
+      $('.fullheight').show();
       $('.description').css('margin-top', 0);
     }
   });
@@ -235,17 +226,14 @@ $(function() {
     $('.fullheight').css('height', carousel); //set .fullheight to window size
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
-      var absCarousel = 0;
-      if(carousel >= 0){
-        absCarousel = carousel;
-      }
-      var headerMargin = $('.navbar-fixed-top .navbar-header').height() - absCarousel;
-      if(headerMargin < 50){
-        $('.description').css('margin-top', headerMargin + 'px');
-      } else{
-        $('.description').css('margin-top', '50px');
-      }
+      $('.fullheight').hide();
+      // if(headerMargin < 50){
+        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
+      // } else{
+      //   $('.description').css('margin-top', 50);
+      // }
     } else {
+      $('.fullheight').show();
       $('.description').css('margin-top', 0);
     }
   });
