@@ -66,7 +66,7 @@ $(function() {
     $('footer nav .content').removeClass('container-fluid');
     $('footer nav .content').addClass('container');
     $('.fixed-address').addClass('text-right');
-    $('#hours-collapse').addClass('in');
+    $('#hours-collapse').collapse('show');
     $('.hours-toggle').attr('aria-expanded', true);
   }
 
@@ -116,9 +116,7 @@ $(function() {
   var carousel = 0;
 
   wheight = $(window).height(); //get height of window
-  console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
   carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
-  console.log(carousel);
   $('.fullheight').css('height', carousel); //set .fullheight to window size
   //create margin above header if not enough space to keep it below navbar
   if(carousel < $('.navbar-fixed-top .navbar-header').height()){
@@ -134,9 +132,7 @@ $(function() {
   $(window).bind("load", function() {
     //make any corrections after page is completely loaded
     wheight = $(window).height(); //get height of window
-    console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
     carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
-    console.log(carousel);
     $('.fullheight').css('height', carousel); //set .fullheight to window size
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
@@ -160,8 +156,6 @@ $(function() {
     }
   });
 
-  console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
-  console.log(carousel);
 
   //adjust height of .fullheight elements on window resize
   $(window).resize(function(){
@@ -172,17 +166,17 @@ $(function() {
       $('footer nav').removeClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container-fluid');
       $('.fixed-address').removeClass('text-right');
+      $('#hours-collapse').collapse('hide');
     } else {
-      //put footer at bottom of window, change type of container
+      //put footer at bottom of window, change type of container, expand hours
       $('footer nav .content').removeClass('container-fluid');
       $('footer nav').addClass('navbar-fixed-bottom');
       $('footer nav .content').addClass('container');
       $('.fixed-address').addClass('text-right');
+      $('#hours-collapse').collapse('show');
     }
     var wheight = $(window).height(); //get height of window
-    console.log(wheight + ', ' + $('.navbar-fixed-bottom').height() + ', ' + $('.description').outerHeight());
     var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
-    console.log(carousel);
     $('.fullheight').css('height', carousel); //set .fullheight to window size minus other elements
 
     //if carousel captions does not fit below navbar, do not show it
@@ -210,7 +204,6 @@ $(function() {
   $(document).on('hidden.bs.collapse', function(){
     var wheight = $(window).height(); //get height of window
     var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
-    console.log(carousel);
     $('.fullheight').css('height', carousel); //set .fullheight to window size
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
