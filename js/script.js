@@ -123,11 +123,7 @@ $(function() {
   //create margin above header if not enough space to keep it below navbar
   if(carousel < $('.navbar-fixed-top .navbar-header').height()){
     $('.fullheight').hide();
-    // if(headerMargin < 50){
-      $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
-    // } else{
-    //   $('.description').css('margin-top', 50);
-    // }
+    $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
   } else {
     $('.fullheight').show();
     $('.description').css('margin-top', 0);
@@ -145,11 +141,7 @@ $(function() {
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
       $('.fullheight').hide();
-      // if(headerMargin < 50){
-        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
-      // } else{
-      //   $('.description').css('margin-top', 50);
-      // }
+      $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
     } else {
       $('.fullheight').show();
       $('.description').css('margin-top', 0);
@@ -209,11 +201,7 @@ $(function() {
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
       $('.fullheight').hide();
-      // if(headerMargin < 50){
-        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
-      // } else{
-      //   $('.description').css('margin-top', 50);
-      // }
+      $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
     } else {
       $('.fullheight').show();
       $('.description').css('margin-top', 0);
@@ -227,11 +215,7 @@ $(function() {
     //create margin above header if not enough space to keep it below navbar
     if(carousel < $('.navbar-fixed-top .navbar-header').height()){
       $('.fullheight').hide();
-      // if(headerMargin < 50){
-        $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
-      // } else{
-      //   $('.description').css('margin-top', 50);
-      // }
+      $('.description').css('margin-top', $('.navbar-fixed-top .navbar-header').height());
     } else {
       $('.fullheight').show();
       $('.description').css('margin-top', 0);
