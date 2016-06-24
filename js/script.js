@@ -21,8 +21,10 @@ $(function() {
 
   // scroll to menu on mobile when category tapped
 	$('ul.nav-tabs>li').on('click', function(event){
-		event.preventDefault();
-		scrollToID('#menu-content', 750);
+    if($(window).width() < 768){
+  		event.preventDefault();
+  		scrollToID('#menu-content', 750);
+    }
 	});
 
   // add inbody class
