@@ -19,6 +19,12 @@ $(function() {
     offset: topoffset
   });
 
+  // scroll to menu on mobile when category tapped
+	$('ul.nav-tabs>li').on('click', function(event){
+		event.preventDefault();
+		scrollToID('#menu-content', 750);
+	});
+
   // add inbody class
   var hash = $(this).find('li.active a').attr('href');
   if(hash !== '#page-top') {
@@ -214,3 +220,9 @@ $(function() {
     }
   });
 });
+// scroll function for mobile when selecting menu category
+function scrollToID(id, speed){
+	var offSet = 50;
+	var targetOffset = $(id).offset().top - offSet;
+	$('html,body').animate({scrollTop:targetOffset}, speed);
+}
