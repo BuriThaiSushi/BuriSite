@@ -133,7 +133,7 @@ header .inbody{
 }
 .fade .item:first-child{
   top: auto;
-  opacity: 1;
+  /*opacity: 1;*/
   position: relative;
 }
 .fade .active{
@@ -145,7 +145,6 @@ header .inbody{
 .carousel .item{
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
   width: 100%;
   height: 100%;
 }
@@ -226,13 +225,24 @@ footer .navbar{
 .fixed-address{
   margin-bottom: 10px;
 }
+/*footer{
+  margin-bottom: 10px;
+}*/
 .copyright{
-  padding-bottom: 60px;
   font-size: 10pt;
   color: #888888;
+  margin-bottom: 10px;
+}
+.bottompic{
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10% 43%;
+  margin-bottom: 50px;
 }
 @media(max-width: 767px){
-  .copyright{
-    padding-bottom: 10px;
+  .bottompic{
+    margin-bottom: 0;
   }
 }

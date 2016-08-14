@@ -6,7 +6,7 @@ $(function() {
 
   //disable carousel pause
   $('.carousel').carousel({
-    pause: false
+    pause: "hover"
   });
 
   var wwidth = $(window).width(); //get width of window
@@ -114,11 +114,10 @@ $(function() {
   }); //smooth scrolling
 
   //replace img inside carousels with a background image
-  $('#carousel-display .item img').each(function(){
-    var imgSrc = $(this).attr('src');
-    $(this).parent().css({'background-image': 'url('+imgSrc+')'});
-    $(this).remove();
-  });
+  imgToBg('#carousel-display .item img');
+
+  //replace about us pic with background
+  imgToBg('#aboutuspic');
 
   var wheight = 0;
   var carousel = 0;
@@ -134,6 +133,15 @@ $(function() {
     $('.fullheight').show();
     $('.description').css('margin-top', 0);
   }
+
+  //Make picture at bottom size of window minus size of about us and copyright
+  var bottompic = wheight - $('section#about').outerHeight() - $('.copyright').outerHeight() - $('nav.navbar-fixed-top').outerHeight() - $('nav.navbar-fixed-bottom').outerHeight();
+  if(bottompic > 200){
+    $('#bottompic').css('height', bottompic);
+  }else{
+    $('#bottompic').css('height', 200);
+  }
+
   //do not show captions until loaded
   $('.carousel-caption').hide();
 
@@ -186,6 +194,14 @@ $(function() {
     var carousel = wheight - $('.navbar-fixed-bottom').height() - $('.description').outerHeight() - 10; //get height of carousel
     $('.fullheight').css('height', carousel); //set .fullheight to window size minus other elements
 
+    //Make picture at bottom size of window minus size of about us and copyright
+    var bottompic = wheight - $('section#about').outerHeight() - $('.copyright').outerHeight() - $('nav.navbar-fixed-top').outerHeight() - $('nav.navbar-fixed-bottom').outerHeight();
+    if(bottompic > 200){
+      $('#bottompic').css('height', bottompic);
+    }else{
+      $('#bottompic').css('height', 200);
+    }
+
     //if carousel captions does not fit below navbar, do not show it
     var tallestCap = 0;
     $('.carousel-caption').each(function(){
@@ -222,9 +238,19 @@ $(function() {
     }
   });
 });
-// scroll function for mobile when selecting menu category
+
 function scrollToID(id, speed){
+  // scroll function for mobile when selecting menu category
 	var offSet = 50;
 	var targetOffset = $(id).offset().top - offSet;
 	$('html,body').animate({scrollTop:targetOffset}, speed);
+}
+
+function imgToBg(image){
+  //replace img with a background image
+  $(image).each(function(){
+    var imgSrc = $(this).attr('src');
+    $(this).parent().css({'background-image': 'url('+imgSrc+')'});
+    $(this).remove();
+  });
 }
